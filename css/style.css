@@ -1,0 +1,21 @@
+/* Hapus semua styling lama jika ada, ganti dengan ini */
+
+/* Gaya untuk judul di halaman host */
+.host-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800; /* Super tebal */
+    max-width: 600px; /* Batasi lebar agar tidak terlalu panjang */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styling untuk Card di Halaman Utama (biarkan ini untuk main.html) */
+.card-img-top {
+    aspect-ratio: 1 / 0.8;
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    transition: transform 0.2s ease-in-out;
+}

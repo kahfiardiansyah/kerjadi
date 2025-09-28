@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - KerjaDi Clone</title>
+    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-light">
+    <div class="container my-5" id="payment-page-container">
+        <div class="text-center mb-4">
+            <a class="text-danger text-decoration-none h2 fw-bold" href="index.html">KerjaDi</a>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">Data Penyewa</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Sudah punya akun? Data Anda sudah terisi otomatis.</p>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label for="renter-name" class="form-label">Nama Lengkap</label>
+                                <input type="text" id="renter-name" class="form-control" disabled>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="renter-phone" class="form-label">Nomor Ponsel</label>
+                                <input type="text" id="renter-phone" class="form-control" placeholder="+62">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="renter-email" class="form-label">Email</label>
+                                <input type="email" id="renter-email" class="form-control" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Metode Pembayaran</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="va" checked>
+                            <label class="form-check-label" for="va">Virtual Account</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="cc">
+                            <label class="form-check-label" for="cc">Kartu Kredit/Debit</label>
+                        </div>
+                         <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="ewallet">
+                            <label class="form-check-label" for="ewallet">E-Wallet</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Rincian Biaya</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Biaya Sewa</span>
+                                <span id="rental-price">Rp0</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Biaya Layanan</span>
+                                <span>Rp0</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between fw-bold">
+                                <span>Total Bayar</span>
+                                <span id="total-price">Rp0</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                         <button id="pay-now-btn" class="btn btn-danger w-100">Lakukan Pembayaran</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    
+    <script src="js/firebase-config.js"></script>
+    
+    <script>
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
